@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# session-start: inject plugin context into Claude Code session
+# Exit 0 = success, non-zero = failure (session continues regardless)
+
+context="claude-gitizens plugin — Claude Code interface for the Gitizens civilization.
+
+Available commands:
+  /gitizens:propose  — submit a new law proposal to the world
+  /gitizens:status   — show current world state and active events
+  /gitizens:laws     — list enacted laws
+  /git               — enforce conventional commit messages (<type>: <description>)
+
+Key rules:
+  - Never modify ordinary9843/gitizens repo directly — all changes via GitHub Issues
+  - All skills must call 'bash scripts/check-access.sh' first
+  - Do not invent entity IDs — they are auto-assigned by the world engine
+  - One effect per proposal
+
+Commit types: feat | fix | docs | chore | system"
+
+# Escape for JSON: backslashes, quotes, newlines, tabs
+escaped="${context//\\/\\\\}"
+escaped="${escaped//\"/\\\"}"
+escaped="${escaped//$'\n'/\\n}"
+escaped="${escaped//$'\r'/\\r}"
+escaped="${escaped//$'\t'/\\t}"
+
+printf '{"hookSpecificOutput":{"additionalContext":"%s"}}' "$escaped"
+exit 0

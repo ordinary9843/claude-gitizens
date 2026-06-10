@@ -1,0 +1,8 @@
+{
+  "name": "claude-gitizens",
+  "display_name": "Gitizens",
+  "description": "Participate in Gitizens — a nation that runs entirely on GitHub. Propose laws, vote with reactions, and shape a living world.",
+  "repository": "https://github.com/ordinary9843/claude-gitizens",
+  "keywords": ["github", "nation", "voting", "game", "simulation"],
+  "skills": ["gitizens:propose", "gitizens:status", "gitizens:laws"]
+}
