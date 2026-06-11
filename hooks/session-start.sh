@@ -7,16 +7,16 @@ if ! command -v gh &>/dev/null || ! gh auth status &>/dev/null 2>&1; then
   exit 0
 fi
 
-# Use python3 to decode base64 — portable across Linux, macOS, Windows Git Bash
 decode_b64() {
-  python3 -c "import sys,base64; sys.stdout.write(base64.b64decode(sys.stdin.read().strip()).decode())"
+  python -c "import sys,base64; sys.stdout.write(base64.b64decode(sys.stdin.read().strip()).decode())" 2>/dev/null \
+    || python3 -c "import sys,base64; sys.stdout.write(base64.b64decode(sys.stdin.read().strip()).decode())"
 }
 
 STATE=$(gh api "repos/$GITIZENS_REPO/contents/world/state.json" \
   --jq '.content' 2>/dev/null | decode_b64 2>/dev/null) || exit 0
 
 parse_field() {
-  echo "$STATE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('$1','$2'))" 2>/dev/null
+  echo "$STATE" | python -c "import sys,json; d=json.load(sys.stdin); print(d.get('$1','$2'))" 2>/dev/null || python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('$1','$2'))" 2>/dev/null
 }
 
 ERA=$(parse_field era "?")
