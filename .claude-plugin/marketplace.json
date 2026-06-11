@@ -1,8 +1,21 @@
 {
   "name": "claude-gitizens",
-  "display_name": "Gitizens",
-  "description": "Participate in Gitizens — a nation that runs entirely on GitHub. Propose laws, vote with reactions, and shape a living world.",
-  "repository": "https://github.com/ordinary9843/claude-gitizens",
-  "keywords": ["github", "nation", "voting", "game", "simulation"],
-  "skills": ["gitizens:propose", "gitizens:status", "gitizens:laws"]
+  "owner": {
+    "name": "ordinary9843"
+  },
+  "metadata": {
+    "description": "Plugin for participating in the Gitizens civilization via Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-gitizens",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ordinary9843/claude-gitizens.git"
+      },
+      "description": "Participate in Gitizens — a nation that runs entirely on GitHub. Propose laws, vote with reactions, and shape a living world.",
+      "version": "1.0.0"
+    }
+  ]
 }

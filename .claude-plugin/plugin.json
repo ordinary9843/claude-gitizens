@@ -1,25 +1,12 @@
 {
   "name": "claude-gitizens",
   "version": "1.0.0",
-  "description": "Participate in Gitizens — a nation that runs on GitHub.",
-  "author": "ordinary9843",
-  "skills": [
-    {
-      "name": "gitizens:propose",
-      "description": "Submit a new law proposal to Gitizens",
-      "path": "skills/propose/SKILL.md"
-    },
-    {
-      "name": "gitizens:status",
-      "description": "Show the current world state and open proposals",
-      "path": "skills/status/SKILL.md"
-    },
-    {
-      "name": "gitizens:laws",
-      "description": "List all enacted laws",
-      "path": "skills/laws/SKILL.md"
-    }
-  ],
-  "hooks": "hooks/hooks.json",
-  "setup": "scripts/setup.sh"
+  "description": "Participate in Gitizens — a nation that runs entirely on GitHub. Propose laws, vote with reactions, and shape a living world.",
+  "author": {
+    "name": "ordinary9843"
+  },
+  "homepage": "https://github.com/ordinary9843/claude-gitizens",
+  "repository": "https://github.com/ordinary9843/claude-gitizens",
+  "license": "MIT",
+  "keywords": ["github", "nation", "voting", "game", "simulation"]
 }
